@@ -5,15 +5,16 @@ import {
   MapPin, Menu, X, ChevronRight, Zap, MessageCircle 
 } from 'lucide-react';
 import RoiCalculator from "./components/RoiCalculator";
-import solarwater from './assests/solarwater.jpg';
-import SolarStreetlights from './assests/SolarStreetlights.jpg';
-import Solarpower from './assests/Solarpower.jpg';
-import Battery from './assests/Battery.jpg';  
-import solarpowered from './assests/solarpowered.jpg';
-import solarpumps from './assests/solarpumps.jpg';
+import solarwater from './assets/solarwater.jpg';
+import SolarStreetlights from './assets/SolarStreetlights.jpg';
+import Solarpower from './assets/Solarpower.jpg';
+import Battery from './assets/Battery.jpg';  
+import solarpowered from './assets/solarpowered.jpg';
+import solarpumps from './assets/solarpumps.jpg';
 
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  // FIX 1: Defined the missing state for the mobile menu
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const App: React.FC = () => {
 
   // Navigation logic to scroll to IDs
   const scrollToSection = (id: string) => {
+    // FIX 2: mobileMenuOpen is now defined so this works
     setMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
@@ -83,7 +85,7 @@ const App: React.FC = () => {
       </nav>
 
       {/* ─── HERO SECTION ─── */}
-      <header className="relative min-h-screen flex items-center pt-10 overflow-hidden">
+      <header className="relative min-h-screen flex items-center pt-10 overflow-hidden" id="home">
         <div className="absolute inset-0 animate-grid-shift opacity-30 pointer-events-none z-0" />
         
         <div className="absolute top-1/2 -translate-y-1/2 right-[-5%] md:right-[5%] z-0 pointer-events-none">
@@ -94,7 +96,7 @@ const App: React.FC = () => {
           </motion.div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-20 w-full " id="home">
+        <div className="max-w-7xl mx-auto px-6 relative z-20 w-full">
           <motion.div initial={{ x: -60, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1, ease: "easeOut" }}>
             <div className="inline-flex items-center gap-2 bg-sun/10 border border-sun/30 px-4 py-1.5 rounded-full text-sun-bright text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
               <Zap size={14} className="animate-pulse" /> Tirupati's #1 Solar Provider
@@ -231,7 +233,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      <footer className=" bg-sky-800/20 border-t border-white/5 py-10 text-center border-t border-white/5">
+      <footer className=" bg-sky-800/20 border-t border-white/5 py-10 text-center">
         <p className="text-slate-600 text-sm tracking-widest uppercase ">© 2026 HITECH SOLAR SYSTEMS. Powering Tirupati with pride.</p>
       </footer>
 
