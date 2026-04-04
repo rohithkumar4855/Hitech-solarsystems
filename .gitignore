@@ -1,0 +1,42 @@
+# ─── NODE MODULES ───
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ─── BUILD FILES ───
+dist/
+build/
+.vite/
+
+# ─── ENV FILES (IMPORTANT) ───
+.env
+.env.*
+!.env.example
+
+# ─── LOG FILES ───
+logs
+*.log
+
+# ─── OS FILES ───
+.DS_Store
+Thumbs.db
+
+# ─── EDITOR / IDE ───
+.vscode/
+.idea/
+*.swp
+
+# ─── TYPESCRIPT ───
+*.tsbuildinfo
+
+# ─── CACHE ───
+.cache/
+.parcel-cache/
+
+# ─── TEST COVERAGE ───
+coverage/
+
+# ─── MISC ───
+*.local
