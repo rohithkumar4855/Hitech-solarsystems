@@ -18,7 +18,8 @@
     "lucide-react": "^1.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.160.1"
+    "three": "^0.183.2",
+    "three-mesh-bvh": "^0.9.9"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
