@@ -2,7 +2,6 @@
   "name": "hitechsolarsystems",
   "version": "1.0.0",
   "description": "Hi-Tech Solar Systems Website",
-  "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -10,15 +9,16 @@
   },
   "author": "Ravi Kumar Devarala",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
-    "@react-three/drei": "^9.122.0",
-    "@react-three/fiber": "^8.18.0",
+    "@react-three/drei": "^9.88.0",
+    "@react-three/fiber": "^8.15.14",
     "framer-motion": "^12.38.0",
     "leva": "^0.10.1",
-    "lucide-react": "^1.7.0",
+    "lucide-react": "^0.379.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.183.2",
+    "three": "^0.160.0",
     "three-mesh-bvh": "^0.9.9"
   },
   "devDependencies": {
@@ -29,8 +29,6 @@
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3",
-    "vite": "^5.0.10"
-  },
-  "keywords": [],
-  "type": "commonjs"
+    "vite": "^8.0.3"
+  }
 }
