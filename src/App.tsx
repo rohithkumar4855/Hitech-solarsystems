@@ -54,9 +54,7 @@ const App: React.FC = () => {
       </a>
 
       {/* ─── NAVIGATION ─── */}
-      <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
-        isScrolled ? 'bg-sky-900/90 backdrop-blur-xl border-b border-white/10 py-3' : 'bg-transparent py-6'
-      }`}>
+      <nav className="fixed w-full z-[100] transition-all duration-500 bg-sky-900/90 backdrop-blur-xl py-4">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3 cursor-pointer group flex-shrink-0" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
             <div className="relative">
@@ -85,12 +83,12 @@ const App: React.FC = () => {
       </nav>
 
       {/* ─── HERO SECTION ─── */}
-      <header className="relative min-h-screen flex items-center pt-10 overflow-hidden" id="home">
+      <header className="relative my-10 h-screen flex items-center  overflow-hidden" id="home">
         <div className="absolute inset-0 animate-grid-shift opacity-30 pointer-events-none z-0" />
         
         <div className="absolute top-1/2 -translate-y-1/2 right-[-5%] md:right-[5%] z-0 pointer-events-none">
-          <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 2, ease: "easeOut" }} className="relative">
-            <div className="w-64 h-64 md:w-[600px] md:h-[600px] rounded-full bg-gradient-to-br from-sun-bright via-sun to-sun-deep shadow-[0_0_120px_rgba(245,166,35,0.4)] animate-sun-pulse" />
+          <motion.div initial={{ scale: 0.6, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 2, ease: "easeOut" }} className="relative">
+            <div className="w-64 h-64 md:w-[500px] md:h-[500px] rounded-full bg-gradient-to-br from-sun-bright via-sun to-sun-deep shadow-[0_0_120px_rgba(245,166,35,0.4)] animate-sun-pulse" />
             <div className="absolute inset-[-30px] rounded-full border border-sun/20 animate-[ping_4s_linear_infinite]" />
             <div className="absolute inset-0 bg-sun/10 blur-[120px] rounded-full scale-150" />
           </motion.div>
@@ -101,7 +99,7 @@ const App: React.FC = () => {
             <div className="inline-flex items-center gap-2 bg-sun/10 border border-sun/30 px-4 py-1.5 rounded-full text-sun-bright text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
               <Zap size={14} className="animate-pulse" /> Tirupati's #1 Solar Provider
             </div>
-            <h1 className="font-bebas text-7xl md:text-9xl leading-[0.85] mb-6 drop-shadow-2xl">
+            <h1 className="font-bebas text-8xl md:text-8xl leading-[0.85] mb-6 drop-shadow-2xl">
               <span className="block text-white">POWER</span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-sun to-sun-deep block">YOUR LIFE</span>
               <span className="block text-white">WITH SUN</span>
@@ -120,7 +118,7 @@ const App: React.FC = () => {
       </header>
 
       {/* ─── ABOUT SECTION ─── */}
-      <section id="about" className="py-24 relative overflow-hidden">
+      <section id="about" className="py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
             <div className="rounded-[40px] overflow-hidden border border-white/10 shadow-2xl">
@@ -159,7 +157,7 @@ const App: React.FC = () => {
       </section>
 
       {/* ─── SERVICES SECTION ─── */}
-      <section id="services" className="py-24 relative overflow-hidden bg-sky-800/20 border-t border-white/5 z-10">
+      <section id="services" className="py-4 relative overflow-hidden bg-sky-800/20 border-t border-white/5 z-10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <h4 className="text-sun font-bold tracking-[0.3em] uppercase text-sm mb-4">Our Offering</h4>
@@ -178,7 +176,7 @@ const App: React.FC = () => {
       </section>
 
       {/* ─── WHY CHOOSE US ─── */}
-      <section className="py-24 bg-sky-900 border-t border-white/5">
+      <section className="py-8 bg-sky-900 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h4 className="text-sun font-bold tracking-[0.3em] uppercase text-sm mb-4">Why Choose Us</h4>
@@ -191,7 +189,7 @@ const App: React.FC = () => {
           </div>
         </div>
       </section>
-
+<RoiCalculator />
       {/* ─── PROCESS ─── */}
       <section className="py-24 bg-sky-800/20 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 text-center">
@@ -207,7 +205,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      <RoiCalculator />
+      
 
       {/* ─── CONTACT SECTION ─── */}
       <section id="contact" className="py-32 bg-sky-800/20 border-t border-white/5 relative">
@@ -240,10 +238,10 @@ const App: React.FC = () => {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div initial={{ x: '100%' }} animate={{ x: 0 }} exit={{ x: '100%' }} className="fixed inset-0 z-[200] bg-sky-950 p-10 flex flex-col justify-center gap-8">
+          <motion.div  className="fixed inset-0 z-[200] bg-sky-950 p-10 flex flex-col justify-center gap-8">
             <button onClick={() => setMobileMenuOpen(false)} className="absolute top-10 right-10 text-sun"><X size={40}/></button>
             {['home','about', 'services', 'contact'].map((item) => (
-              <button key={item} onClick={() => scrollToSection(item)} className="font-bebas text-6xl text-left uppercase text-white">{item}</button>
+              <button key={item} onClick={() => scrollToSection(item)} className="font-bebas text-4xl text-left uppercase text-white">{item}</button>
             ))}
           </motion.div>
         )}
@@ -285,3 +283,7 @@ const ProductCard = ({ imgUrl, title, desc }: any) => (
 );
 
 export default App;
+
+
+
+
