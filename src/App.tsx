@@ -116,7 +116,7 @@ const App: React.FC = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-10">
-            {['Home', 'About', 'Scheme', 'Services', 'Contact'].map((item) => (
+            {['Home','Scheme','About', 'Services', 'Contact'].map((item) => (
               <button 
                 key={item}
                 onClick={() => item === 'Home' ? window.scrollTo({top: 0, behavior: 'smooth'}) : scrollToSection(item.toLowerCase())} 
@@ -137,47 +137,76 @@ const App: React.FC = () => {
       </nav>
 
       {/* ─── HERO SECTION ─── */}
-      {/* ─── HERO SECTION ─── */}
-      <header className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0B1120]" id="home">
-        
-        {/* VIDEO BACKGROUND ONLY */}
-        <div className="absolute inset-0 z-0">
-          <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-            <source src={solarVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          {/* Optional: Add a very dark semi-transparent overlay here if the text is hard to read against the video */}
-          <div className="absolute inset-0 bg-slate-950/40"></div> 
-        </div>
+     <header className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0B1120]" id="home">
 
-        {/* HERO CONTENT */}
-{/* HERO CONTENT */}
-<div className="max-w-7xl mx-auto px-6 relative z-20 w-full text-center flex flex-col items-center pt-24 md:pt-0">          <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 1, ease: "easeOut" }} className="flex flex-col items-center">
-            <div className="inline-flex items-center gap-2 bg-sun/10 border border-sun/30 px-4 py-1.5 rounded-full bg-gradient-to-r from-sun to-sun-deep text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm shadow-[0_0_20px_rgba(245,166,35,0.1)]">
-              <Zap size={14} className="text-sun" /> Tirupati's #1 Solar Provider
-            </div>
-            <h1 className="font-bebas text-5xl md:text-8xl lg:text-9xl leading-tight mb-6 drop-shadow-2xl flex flex-wrap justify-center gap-3">
-              <span className="text-white">POWER</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sun to-amber-500">YOUR LIFE</span>
-              <span className="text-white">WITH SUN</span>
-            </h1>
-           <p className="text-slate-300 text-lg md:text-xl max-w-xl mb-10 leading-relaxed bg-slate-900/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl">
-  Make the most of Tirupati’s <span className="text-sun font-bold">300+ sunny days</span> with solar power. 
-  Reduce your electricity bills and get government subsidies up to 
-  <span className="text-white font-semibold"> ₹78,000</span>. 
-  We handle everything from installation to approvals, so you can enjoy clean and reliable energy without any hassle.
-</p>
-            <div className="flex flex-wrap justify-center gap-5">
-              <button onClick={() => scrollToSection('services')} className="border border-white/30 text-white px-8 py-3 rounded-full font-bold text-sm uppercase tracking-tight flex items-center gap-2 hover:scale-105 hover:border-sun hover:bg-sun/10 hover:text-sun transition-all active:scale-95 backdrop-blur-sm">
-                View Services
-              </button>
-              <button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-sun to-amber-500 text-slate-950 px-8 py-3 rounded-full font-bold text-sm uppercase tracking-tight flex items-center gap-2 hover:scale-105 hover:shadow-[0_0_30px_rgba(245,166,35,0.4)] transition-all active:scale-95 shadow-lg">
-                Book Free Site Survey <ChevronRight size={18} strokeWidth={3} />
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </header>
+  {/* ─── VIDEO BACKGROUND ─── */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    preload="auto"
+    poster={solarwater} // fallback image
+    onCanPlay={(e) => {
+      (e.currentTarget as HTMLVideoElement).classList.add('opacity-100');
+    }}
+    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+  >
+    <source src={solarVideo} type="video/mp4" />
+  </video>
+
+  {/* Overlay for readability */}
+  <div className="absolute inset-0 bg-slate-950/40"></div>
+
+  {/* ─── HERO CONTENT ─── */}
+  <div className="max-w-7xl mx-auto px-6 relative z-20 w-full text-center flex flex-col items-center pt-24 md:pt-0">
+    <motion.div
+      initial={{ y: 40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      className="flex flex-col items-center"
+    >
+      <div className="inline-flex items-center gap-2 bg-sun/10 border border-sun/30 px-4 py-1.5 rounded-full bg-gradient-to-r from-sun to-sun-deep text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm shadow-[0_0_20px_rgba(245,166,35,0.1)]">
+        <Zap size={14} className="text-sun" /> Tirupati's #1 Solar Provider
+      </div>
+
+      <h1 className="font-bebas text-5xl md:text-8xl lg:text-9xl leading-tight mb-6 drop-shadow-2xl flex flex-wrap justify-center gap-3">
+        <span className="text-white">POWER</span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-sun to-amber-500">YOUR LIFE</span>
+        <span className="text-white">WITH SUN</span>
+      </h1>
+
+      <p className="text-slate-300 text-lg md:text-xl max-w-xl mb-10 leading-relaxed bg-slate-900/50 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl">
+        Make the most of Tirupati’s <span className="text-sun font-bold">300+ sunny days</span> with solar power. 
+        Reduce your electricity bills and get government subsidies up to 
+        <span className="text-white font-semibold"> ₹78,000</span>. 
+        We handle everything from installation to approvals, so you can enjoy clean and reliable energy without any hassle.
+      </p>
+
+      <div className="flex flex-wrap justify-center gap-5">
+        <button onClick={() => scrollToSection('services')} className="border border-white/30 text-white px-8 py-3 rounded-full font-bold text-sm uppercase tracking-tight flex items-center gap-2 hover:scale-105 hover:border-sun hover:bg-sun/10 hover:text-sun transition-all active:scale-95 backdrop-blur-sm">
+          View Services
+        </button>
+        <button onClick={() => scrollToSection('contact')} className="bg-gradient-to-r from-sun to-amber-500 text-slate-950 px-8 py-3 rounded-full font-bold text-sm uppercase tracking-tight flex items-center gap-2 hover:scale-105 hover:shadow-[0_0_30px_rgba(245,166,35,0.4)] transition-all active:scale-95 shadow-lg">
+          Book Free Site Survey <ChevronRight size={18} strokeWidth={3} />
+        </button>
+      </div>
+    </motion.div>
+  </div>
+  <script>
+    {`
+      function scrollToSection(id) {
+        const el = document.getElementById(id);
+        if (el) {
+          window.scrollTo({
+            top: el.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      }
+    `}
+  </script>
+</header>
 
       {/* ─── PM SURYA GHAR YOJANA SECTION ─── */}
       <section id="scheme" className="py-24 relative overflow-hidden bg-slate-900 border-t border-white/5">
@@ -339,7 +368,7 @@ const App: React.FC = () => {
       </section>
 
       {/* ─── SERVICES SECTION ─── */}
-      <section id="services" className="py-32 relative overflow-hidden bg-[#050B14] border-t border-white/5 z-10">
+      <section id="services" className="scroll-mt-20 py-10 mb-0 relative overflow-hidden bg-[#050B14] border-t border-white/5 z-10">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
@@ -633,27 +662,37 @@ const App: React.FC = () => {
       </footer>
 
       {/* ─── MOBILE MENU ─── */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div  
-            initial={{ opacity: 0, x: '100%' }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: '100%' }} transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed inset-0 z-[200] bg-slate-950 p-10 flex flex-col justify-center gap-8 border-l border-white/10"
-          >
-            <button onClick={() => setMobileMenuOpen(false)} className="absolute top-10 right-10 text-sun hover:scale-110 transition-transform">
-              <X size={40}/>
-            </button>
-            {['Home', 'About', 'Scheme', 'Services', 'Contact'].map((item) => (
-              <button 
-                key={item} 
-                onClick={() => { item === 'Home' ? window.scrollTo({top: 0}) : scrollToSection(item.toLowerCase()); }} 
-                className="font-bebas text-5xl text-left uppercase text-white hover:text-sun transition-colors"
+      {/* ─── MOBILE MENU ─── */}
+          <AnimatePresence>
+            {mobileMenuOpen && (
+              <motion.div  
+                initial={{ opacity: 0, x: '100%' }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: '100%' }} transition={{ type: 'tween', duration: 0.3 }}
+                className="fixed inset-0 z-[200] bg-slate-950 p-10 flex flex-col justify-center gap-8 border-l border-white/10"
               >
-                {item}
-              </button>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
+                <button onClick={() => setMobileMenuOpen(false)} className="absolute top-10 right-10 text-sun hover:scale-110 transition-transform">
+                  <X size={40}/>
+                </button>
+                
+                {['Home', 'About', 'Scheme', 'Services', 'Contact'].map((item) => (
+                  <button 
+                    key={item} 
+                    onClick={() => { 
+                      // 1. Close the menu first
+                      setMobileMenuOpen(false); 
+                      // 2. Then scroll to the correct section
+                      item === 'Home' 
+                        ? window.scrollTo({top: 0, behavior: 'smooth'}) 
+                        : scrollToSection(item.toLowerCase()); 
+                    }} 
+                    className="font-bebas text-5xl text-left uppercase text-white hover:text-sun transition-colors"
+                  >
+                    {item}
+                  </button>
+                ))}
+
+              </motion.div>
+            )}
+          </AnimatePresence>
     </div>
   );
 };
