@@ -307,7 +307,7 @@ const App: React.FC = () => {
       </section>
 
       {/* ─── ABOUT SECTION ─── */}
-      <section id="about" className="py-32 relative overflow-hidden bg-slate-950 border-t border-white/5">
+      <section id="about" className="scroll-mt-20 py-10 mb-0  relative overflow-hidden bg-slate-950 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
           
           <motion.div 
