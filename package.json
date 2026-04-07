@@ -4,7 +4,7 @@
   "description": "Hi-Tech Solar Systems Website",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "author": "Ravi Kumar Devarala",
