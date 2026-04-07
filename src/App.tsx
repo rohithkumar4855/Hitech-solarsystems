@@ -662,7 +662,6 @@ const App: React.FC = () => {
       </footer>
 
       {/* ─── MOBILE MENU ─── */}
-      {/* ─── MOBILE MENU ─── */}
           <AnimatePresence>
             {mobileMenuOpen && (
               <motion.div  
@@ -673,7 +672,7 @@ const App: React.FC = () => {
                   <X size={40}/>
                 </button>
                 
-                {['Home', 'About', 'Scheme', 'Services', 'Contact'].map((item) => (
+                {['Home', 'Scheme', 'About','Services', 'Contact'].map((item) => (
                   <button 
                     key={item} 
                     onClick={() => { 
