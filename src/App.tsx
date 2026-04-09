@@ -19,8 +19,8 @@ import solarVideo from './assets/Solar1.mp4';
 import SolarHeater from './assets/solarheater.jpeg';
 import solarfence from './assets/solarfence.webp';
 import luminous from './assets/LuminousBattery.webp';
-import ongrid from './assets/ongrid-image-1.png'; 
-import offgrid from './assets/off-1.jpg';
+import ongrid from './assets/on-grid.jpeg'; 
+import offgrid from './assets/off-grid-150.jpg';
 
 const App: React.FC = () => {
   // ─── STATE MANAGEMENT ───
