@@ -6,7 +6,7 @@ export default function RoiCalculator() {
 
   // Simple logic (can be adjusted)
   const systemSize = (bill / 1000).toFixed(1); // kW
-  const cost = Math.round(Number(systemSize) * 60000);
+  const cost = Math.round(Number(systemSize) * 65000);
   const subsidy = Math.min(78000, cost * 0.4);
   const finalCost = cost - subsidy;
   const savingsYearly = bill * 12 * 0.9;
@@ -29,7 +29,7 @@ export default function RoiCalculator() {
           <input
             type="range"
             min="500"
-            max="10000"
+            max="50000"
             value={bill}
             onChange={(e) => setBill(Number(e.target.value))}
             className="w-full"

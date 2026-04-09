@@ -16,6 +16,11 @@ import Battery from './assets/Battery.jpg';
 import solarpowered from './assets/solarpowered.jpg';
 import solarpumps from './assets/solarpumps.jpg';
 import solarVideo from './assets/Solar1.mp4'; 
+import SolarHeater from './assets/solarheater.jpeg';
+import solarfence from './assets/solarfence.webp';
+import luminous from './assets/LuminousBattery.webp';
+import ongrid from './assets/ongrid-image-1.png'; 
+import offgrid from './assets/off-1.jpg';
 
 const App: React.FC = () => {
   // ─── STATE MANAGEMENT ───
@@ -60,7 +65,7 @@ const App: React.FC = () => {
       return;
     }
 
-    const message = `Hello Hitech Solar! I would like a free quote.%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Avg Monthly Bill:* ${formData.bill || 'Not specified'}`;
+    const message = `Hello Hi-tech Power Solutions! I would like a free quote.%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Avg Monthly Bill:* ${formData.bill || 'Not specified'}`;
     const whatsappNumber = "919515844725"; // Updated to the number from your contact section
     
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
@@ -110,7 +115,7 @@ const App: React.FC = () => {
               <div className="absolute inset-0 rounded-full border border-sun/30 animate-ping" />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="font-bebas text-2xl tracking-[0.15em] text-white">HITECH POWERSOLUTIONS</span>
+              <span className="font-bebas text-2xl tracking-[0.15em] text-white">HI-TECH POWER SOLUTIONS</span>
               <span className="font-bebas text-sm tracking-[0.4em] text-sun">SYSTEMS</span>
             </div>
           </div>
@@ -145,16 +150,14 @@ const App: React.FC = () => {
     loop
     muted
     playsInline
-    preload="auto"
-    poster={solarwater} // fallback image
+preload="metadata"
     onCanPlay={(e) => {
       (e.currentTarget as HTMLVideoElement).classList.add('opacity-100');
     }}
-    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+    className="absolute inset-0 w-full h-full object-cover transition-opacity duration-200 opacity-0"
   >
     <source src={solarVideo} type="video/mp4" />
   </video>
-
   {/* Overlay for readability */}
   <div className="absolute inset-0 bg-slate-950/40"></div>
 
@@ -227,13 +230,13 @@ const App: React.FC = () => {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-sun to-amber-500">MUFT BIJLI YOJANA</span>
               </motion.h2>
               <motion.p variants={fadeUpVariant} className="text-slate-400 text-lg leading-relaxed">
-                Take advantage of the central government's flagship solar scheme. We are an <span className="text-white font-semibold">approved vendor</span>, helping you secure up to 300 units of free electricity and massive direct-to-bank subsidies.
+                Take advantage of the central government's flagship solar scheme. We are an <span className="text-white font-semibold">approved vendor</span>, helping you secure up to 360 units of free electricity and massive direct-to-bank subsidies.
               </motion.p>
               
               <motion.ul variants={staggerContainer} className="space-y-4 pt-4">
                 {[
                   "Up to ₹78,000 Direct Subsidy",
-                  "300 Units Free Electricity Monthly",
+                  "360 Units Free Electricity Monthly",
                   "Zero Hassle Paperwork (We handle it all)",
                   "Collateral-free low interest loans available"
                 ].map((item, i) => (
@@ -326,7 +329,7 @@ const App: React.FC = () => {
                   <Star className="text-slate-950 w-8 h-8" fill="currentColor" />
                 </div>
                 <div>
-                  <div className="text-4xl font-bebas tracking-wide">8+ YEARS</div>
+                  <div className="text-4xl font-bebas tracking-wide">12+ YEARS</div>
                   <div className="text-slate-400 text-sm font-bold uppercase tracking-widest">Powering Tirupati</div>
                 </div>
               </div>
@@ -346,7 +349,7 @@ const App: React.FC = () => {
 
             <motion.div variants={fadeUpVariant} className="space-y-6 text-slate-400 text-lg leading-relaxed mb-10">
               <p>
-                Founded in 2018, <span className="text-white font-medium">Hitech Solar Systems</span> began with a single mission: to free the Rayalaseema region from rising electricity costs using pure, clean energy.
+                Founded in 2014, <span className="text-white font-medium">Hi-TECH Power Solutions</span> began with a single mission: to free the Rayalaseema region from rising electricity costs using pure, clean energy.
               </p>
               <p>
                 We are more than just installers. We are Tirupati locals who intimately understand the regional climate, the specific architectural styles of local homes, and the intricate <span className="text-white">APSPDCL grid regulations</span> required for fast approvals.
@@ -368,65 +371,115 @@ const App: React.FC = () => {
       </section>
 
       {/* ─── SERVICES SECTION ─── */}
-      <section id="services" className="scroll-mt-20 py-10 mb-0 relative overflow-hidden bg-[#050B14] border-t border-white/5 z-10">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <div>
-              <h4 className="text-sun font-bold tracking-[0.3em] uppercase text-sm mb-4">Our Expertise</h4>
-              <h2 className="font-bebas text-5xl md:text-7xl leading-none">ALL-TYPE <span className="text-white">SOLAR SOLUTIONS</span></h2>
-            </div>
-            <p className="text-slate-400 max-w-md text-right hidden md:block">
-              Industrial-grade technology tailored for residential, commercial, and agricultural applications.
-            </p>
+     <section id="services" className="scroll-mt-20 py-10 mb-0 relative overflow-hidden bg-[#050B14] border-t border-white/5 z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div>
+            <h4 className="text-sun font-bold tracking-[0.3em] uppercase text-sm mb-4">Our Expertise</h4>
+            <h2 className="font-bebas text-5xl md:text-7xl leading-none">
+              ALL-TYPE <span className="text-white">SOLAR SOLUTIONS</span>
+            </h2>
           </div>
+          <p className="text-slate-400 max-w-md text-right hidden md:block">
+            Industrial-grade technology tailored for residential, commercial, and agricultural applications.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              className="lg:col-span-2 lg:row-span-2 group relative rounded-[40px] overflow-hidden cursor-pointer min-h-[400px] lg:min-h-0"
+        {/* Updated Grid Container to 6 columns on large screens */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+          
+          {/* 1. On-Grid (Takes half the row on large screens) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="group relative rounded-[30px] overflow-hidden cursor-pointer h-[360px] md:h-[420px] lg:col-span-3 col-span-1"
+          >
+            <img
+              src={ongrid}
+              alt="On Grid Solar"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+            <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+              <div className="bg-sun text-slate-950 w-12 h-12 rounded-full flex items-center justify-center mb-4 transform -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+                <ArrowRight size={20} />
+              </div>
+              <h3 className="font-bebas text-4xl md:text-5xl text-white mb-2">On-Grid</h3>
+              <p className="text-slate-300 text-sm md:text-base mb-4 max-w-md">
+                Save more with net-metering. Ideal for homes & businesses connected to electricity grid.
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                <span className="px-4 py-1.5 rounded-full border border-white/20 text-sm text-white">Residential</span>
+                <span className="px-4 py-1.5 rounded-full border border-white/20 text-sm text-white">Commercial</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 2. Off-Grid (Takes the other half of the row on large screens) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="group relative rounded-[30px] overflow-hidden cursor-pointer h-[360px] md:h-[420px] lg:col-span-3 col-span-1"
+          >
+            <img
+              src={offgrid}
+              alt="Off Grid Solar"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-end">
+              <div className="bg-green-400 text-black w-12 h-12 rounded-full flex items-center justify-center mb-4 transform -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
+                <ArrowRight size={20} />
+              </div>
+              <h3 className="font-bebas text-4xl md:text-5xl text-white mb-2">Off-Grid</h3>
+              <p className="text-slate-300 text-sm md:text-base mb-4 max-w-md">
+                Complete independence from electricity grid. Perfect for rural areas & power backup needs.
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                <span className="px-4 py-1.5 rounded-full border border-white/20 text-sm text-white">Remote Areas</span>
+                <span className="px-4 py-1.5 rounded-full border border-white/20 text-sm text-white">Backup Power</span>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* 3. Mapped Services (Each takes 1/3rd of the row on large screens) */}
+          {[
+            { img: SolarHeater, title: "Solar Water Heaters", desc: "Instant hot water with high-efficiency ETC/FPC systems." },
+            { img: solarpumps, title: "Agricultural Pumps", desc: "High-discharge DC/AC pumps for farming independence." },
+            { img: SolarStreetlights, title: "Solar Street Lights", desc: "Integrated Li-Ion illumination for societies & streets." },
+            { img: luminous, title: "Batteries & Inverters", desc: "Deep-cycle storage optimized for solar integration." },
+            { img: solarfence, title: "Solar Fencing", desc: "Reliable perimeter security for farms and industries." },
+          ].map((service, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="group relative rounded-[30px] overflow-hidden cursor-pointer h-[320px] lg:col-span-2 col-span-1"
             >
-              <img src={Solarpower} alt="On Grid Solar" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
-              
-              <div className="absolute inset-0 p-10 flex flex-col justify-end">
-                <div className="bg-sun text-slate-950 w-12 h-12 rounded-full flex items-center justify-center mb-6 transform -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
-                  <ArrowRight />
-                </div>
-                <h3 className="font-bebas text-4xl md:text-5xl text-white mb-3">On-Grid & Off-Grid Rooftop</h3>
-                <p className="text-slate-300 max-w-lg mb-6">Complete EPC solutions for homes and factories. Maximize savings with net-metering or gain total independence with advanced battery backups.</p>
-                <div className="flex gap-3">
-                  <span className="px-4 py-1.5 rounded-full border border-white/20 backdrop-blur-md text-xs font-bold uppercase text-white">Residential</span>
-                  <span className="px-4 py-1.5 rounded-full border border-white/20 backdrop-blur-md text-xs font-bold uppercase text-white">Commercial</span>
-                </div>
+              <img
+                src={service.img}
+                alt={service.title}
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/10 group-hover:from-slate-950/90 transition-all duration-300"></div>
+
+              <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                <h3 className="font-bebas text-3xl text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-slate-400 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100">
+                  {service.desc}
+                </p>
               </div>
             </motion.div>
-
-            {[
-              { img: solarwater, title: "Solar Water Heaters", desc: "Instant hot water with high-efficiency ETC/FPC systems." },
-              { img: solarpumps, title: "Agricultural Pumps", desc: "High-discharge DC/AC pumps for farming independence." },
-              { img: SolarStreetlights, title: "Solar Street Lights", desc: "Integrated Li-Ion illumination for societies & streets." },
-              { img: Battery, title: "Batteries & Inverters", desc: "Deep-cycle storage optimized for solar integration." },
-              { img: solarpowered, title: "Solar Fencing", desc: "Reliable perimeter security for farms and industries." },
-            ].map((service, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}
-                className="group relative rounded-[32px] overflow-hidden cursor-pointer h-[300px]"
-              >
-                <img src={service.img} alt={service.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100" />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/10 group-hover:from-slate-950/90 transition-all duration-300"></div>
-                
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
-                  <h3 className="font-bebas text-3xl text-white mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{service.title}</h3>
-                  <p className="text-slate-400 text-sm opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-100">
-                    {service.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* ─── ADVANTAGES SECTION ─── */}
       <section className="py-24 bg-slate-900 border-t border-white/5 relative">
@@ -502,7 +555,7 @@ const App: React.FC = () => {
       </section>
 
       {/* ─── CONTACT SECTION & WHATSAPP FORM ─── */}
-      <section id="contact" className="py-32 bg-[#050B14] border-t border-white/5 relative">
+      <section id="contact" className="py-20 bg-[#050B14] border-t border-white/5 relative">
         <div className="absolute left-0 bottom-0 w-[600px] h-[600px] bg-sun/5 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 translate-y-1/2"></div>
         
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
@@ -599,15 +652,13 @@ const App: React.FC = () => {
       </section>
 
       {/* ─── FOOTER ─── */}
-     {/* ─── FOOTER ─── */}
-     {/* ─── FOOTER ─── */}
       <footer className="bg-slate-950 border-t border-white/5 pt-20 pb-10">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <Sun className="text-sun w-8 h-8" />
               <div className="flex flex-col leading-none">
-                <span className="font-bebas text-2xl tracking-[0.15em] text-white">HI-TECH POWERSOLUTIONS</span>
+                <span className="font-bebas text-2xl tracking-[0.15em] text-white">HI-TECH POWER SOLUTIONS</span>
                 <span className="font-bebas text-sm tracking-[0.4em] text-sun">SYSTEMS</span>
               </div>
             </div>
@@ -649,7 +700,6 @@ const App: React.FC = () => {
                  <div className="flex flex-col text-sm space-y-1.5">
                    <a href="tel:+919515844725" className="hover:text-white transition-colors">9515844725</a>
                    <a href="tel:+919676568753" className="hover:text-white transition-colors">9676568753</a>
-                   <a href="tel:+919000455536" className="hover:text-white transition-colors">9000455536</a>
                  </div>
               </li>
             </ul>
@@ -657,7 +707,7 @@ const App: React.FC = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 text-center border-t border-white/5 pt-8">
-          <p className="text-slate-600 text-sm tracking-widest uppercase">© 2026 HI-TECH POWERSOLUTIONS. Powering Tirupati with pride.</p>
+          <p className="text-slate-600 text-sm tracking-widest uppercase">© 2026 HI-TECH POWER SOLUTIONS. Powering Tirupati with pride.</p>
         </div>
       </footer>
 
