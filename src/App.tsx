@@ -212,7 +212,7 @@ preload="metadata"
 </header>
 
       {/* ─── PM SURYA GHAR YOJANA SECTION ─── */}
-      <section id="scheme" className="py-24 relative overflow-hidden bg-slate-900 border-t border-white/5">
+      <section id="scheme" className="py-20 relative overflow-hidden bg-slate-900 border-t border-white/5">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-sky-600/10 rounded-full blur-[150px] pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -578,7 +578,7 @@ preload="metadata"
               </div>
               
               <a 
-  href="mailto:babuchandra980@gmail.com" 
+  href="mailto:hitechpowertirupati@gmail.com" 
   className="flex items-center gap-6 p-4 rounded-2xl hover:bg-white/5 transition-colors cursor-pointer group"
 >
   <div className="w-14 h-14 rounded-full bg-sky-900/50 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-sun transition-colors">
@@ -588,7 +588,7 @@ preload="metadata"
     <div className="text-sm text-slate-400 uppercase tracking-widest font-bold mb-1">Email Us</div>
     {/* I used text-lg md:text-2xl here so the long email address doesn't break on small mobile screens */}
     <div className="text-lg md:text-2xl font-bold text-white group-hover:text-sun transition-colors">
-      babuchandra980@gmail.com
+     hitechpowertirupati@gmail.com
     </div>
   </div>
 </a>
